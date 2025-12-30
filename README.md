@@ -1,0 +1,1 @@
+This is a project to understand and implement concepts of Node.js and Express.js. Planned to be expanded upon with integration of PostgreSQL for storing messages in the future.

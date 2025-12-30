@@ -1,0 +1,18 @@
+<html lang="en">
+    <%- include('./partials/header') %>
+    <%- include('./partials/styles.ejs') %>
+    <body>
+        <%- include('./partials/navbar') %>
+        <form action="/new" method="POST">
+            <div class="container">
+                <h1>Add a New Message</h1>
+                <label for="user">Username:</label>
+                <input type="text" id="user" name="user" required>
+                <label for="text">Message:</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </div>
+        </form>            
+        <%- include('./partials/footer') %>
+    </body>
+</html>

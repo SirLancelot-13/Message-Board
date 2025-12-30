@@ -1,0 +1,26 @@
+<html lang="en">
+    <%- include('./partials/header') %>
+    <%- include('./partials/styles.ejs') %>
+    <body>
+        <%- include('./partials/navbar') %>
+        <div class="container">
+            <a href="/new">+ Add a new message</a>
+            <h1>Messages</h1>
+            <% if (messages.length>0){ %>
+                <% messages.forEach(function(message){ %>
+                    <div class="message-card">
+                        <h3><%= message.user %></h3>
+                        <p><%= message.text %></p>
+                        <small>Posted on <%= message.added.toDateString() %></small>
+                        <% const messageLink= `/${message.id}`; %>
+                        <a href="<%= messageLink %>">View Message</a>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No messages yet. Be the first to <a href="/new">add a message</a>!</p>
+            <% } %>
+        </div>
+
+        <%- include('./partials/footer') %>
+    </body>
+</html>
